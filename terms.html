@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Algorithm Pulse | Terms & Conditions</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:#070507;color:#fff;line-height:1.6;
+}
+header{
+position:sticky;top:0;z-index:20;
+height:72px;padding:0 6%;
+display:flex;align-items:center;justify-content:space-between;
+background:rgba(7,5,7,.92);backdrop-filter:blur(15px);
+border-bottom:1px solid #35131e;
+}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;font-size:20px}
+.logo{
+width:40px;height:40px;border-radius:11px;
+display:flex;align-items:center;justify-content:center;
+background:linear-gradient(135deg,#a72b4f,#501025);
+}
+.lang button{
+background:#10090c;color:#aaa;border:1px solid #421725;
+padding:8px 12px;border-radius:20px;cursor:pointer
+}
+.lang button.active{background:#8e2344;color:#fff}
+
+.hero,main{width:88%;max-width:1050px;margin:auto}
+.hero{padding:70px 0 35px}
+.small{color:#d14b70;letter-spacing:4px;font-size:11px;font-weight:bold}
+h1{font-size:clamp(42px,7vw,78px);line-height:.95;margin-top:15px}
+h1 span{color:#8e2344}
+.hero p{max-width:720px;color:#aaa;margin-top:22px}
+
+.owner{
+display:inline-block;margin-top:25px;padding:15px 20px;
+border:1px solid #421725;border-radius:15px;background:#0e080a
+}
+.owner small{color:#81747a;font-size:10px;letter-spacing:2px}
+.owner b{display:block;margin-top:5px;font-size:18px}
+
+.notice{
+padding:18px;margin:20px 0 25px;
+border:1px solid #542031;border-radius:14px;
+background:#170b10;color:#c8bdc1
+}
+
+.term{
+margin:14px 0;padding:22px;
+border:1px solid #32131d;border-radius:17px;background:#0e080a
+}
+.termrow{display:flex;gap:15px}
+.check{
+appearance:none;width:22px;height:22px;min-width:22px;
+border:1px solid #733049;border-radius:6px;background:#080607;
+cursor:pointer;margin-top:3px;position:relative
+}
+.check:checked{background:#972749;border-color:#c74b6c}
+.check:checked:after{
+content:"✓";position:absolute;left:4px;top:-1px;font-weight:bold
+}
+.term h2{font-size:17px;margin-bottom:7px}
+.term p{color:#aaa;font-size:14px}
+
+.accept{
+margin:35px 0 70px;padding:28px;
+border:1px solid #542031;border-radius:20px;background:#0e080a
+}
+.accept h2{font-size:28px}
+.accept>p{color:#aaa;margin:8px 0 22px}
+.fields{
+display:grid;grid-template-columns:1fr 1fr;gap:14px
+}
+label.title{display:block;font-size:11px;color:#a99ca1;margin-bottom:6px}
+input.text{
+width:100%;padding:13px 14px;
+background:#080607;color:white;border:1px solid #35151e;
+border-radius:9px;outline:none
+}
+input.text:focus{border-color:#b13b5c}
+.final{
+display:flex;gap:12px;margin-top:20px;padding:16px;
+background:#160a0e;border:1px solid #3e1723;border-radius:12px
+}
+.final label{font-size:14px;color:#d2c8cc}
+button.acceptBtn{
+width:100%;margin-top:18px;padding:15px;border:0;border-radius:11px;
+background:linear-gradient(135deg,#a92c50,#701a36);
+color:#fff;font-weight:bold;cursor:pointer;opacity:.4
+}
+button.acceptBtn.ready{opacity:1}
+.success{
+display:none;margin-top:18px;padding:18px;
+border:1px solid #276348;border-radius:12px;
+background:#0b1712;color:#aee1c7
+}
+.success.show{display:block}
+
+#sania{
+position:fixed;right:22px;bottom:22px;width:350px;max-width:calc(100% - 30px);
+z-index:50;border:1px solid #51202f;border-radius:20px;
+background:#0b0709;box-shadow:0 20px 70px #000;
+overflow:hidden;display:none
+}
+.saniaHead{
+padding:15px;background:linear-gradient(135deg,#52152b,#1b0a10);
+display:flex;justify-content:space-between;align-items:center
+}
+.saniaTitle{font-weight:bold}
+.saniaSub{font-size:11px;color:#c09aa8}
+.close{background:none;border:0;color:#aaa;font-size:20px;cursor:pointer}
+.chat{
+height:300px;overflow-y:auto;padding:15px
+}
+.msg{
+padding:10px 12px;margin:8px 0;border-radius:12px;
+font-size:13px;max-width:88%
+}
+.ai{background:#1b0d12;color:#ddd}
+.user{background:#76203c;margin-left:auto}
+.chatInput{display:flex;padding:10px;border-top:1px solid #32131d;gap:6px}
+.chatInput input{
+flex:1;background:#080607;border:1px solid #35151e;
+border-radius:9px;padding:11px;color:#fff;outline:none
+}
+.iconBtn{
+border:1px solid #48202c;background:#15090d;
+color:#fff;border-radius:9px;width:42px;cursor:pointer
+}
+.send{background:#8e2344}
+.saniaOpen{
+position:fixed;right:22px;bottom:22px;z-index:40;
+border:0;border-radius:50%;width:58px;height:58px;
+background:linear-gradient(135deg,#a82d51,#65162f);
+color:#fff;font-size:24px;cursor:pointer;
+box-shadow:0 10px 35px #000
+}
+footer{text-align:center;padding:30px;color:#756a6f;border-top:1px solid #281018;font-size:12px}
+
+@media(max-width:650px){
+.fields{grid-template-columns:1fr}
+.hero{padding-top:45px}
+#sania{right:15px;bottom:15px}
+.saniaOpen{right:15px;bottom:15px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="brand"><div class="logo">AP</div>Algorithm Pulse</div>
+<div class="lang">
+<button id="enBtn" class="active" onclick="setLang('en')">English</button>
+<button id="hiBtn" onclick="setLang('hi')">हिंदी</button>
+</div>
+</header>
+
+<section class="hero">
+<div class="small" id="eyebrow">DIGITAL INNOVATION STUDIO</div>
+<h1 id="title">Terms <span>&</span><br>Conditions.</h1>
+<p id="intro">
+Please carefully review the terms before confirming your project with
+Algorithm Pulse.
+</p>
+
+<div class="owner">
+<small>FOUNDER & CEO</small>
+<b>Aaditya Tiwari</b>
+</div>
+</section>
+
+<main>
+
+<div class="notice" id="notice">
+<strong>Important:</strong> Please read each applicable term carefully
+and tick the checkbox after reviewing it.
+</div>
+
+<div id="terms"></div>
+
+<div class="accept">
+
+<h2 id="acceptTitle">Final Acceptance</h2>
+
+<p id="acceptText">
+Enter your details and confirm that you have reviewed and understood
+the applicable terms.
+</p>
+
+<div class="fields">
+
+<div>
+<label class="title" id="nameLabel">CLIENT NAME</label>
+<input class="text" id="clientName" placeholder="Enter your full name">
+</div>
+
+<div>
+<label class="title" id="contactLabel">WHATSAPP / CONTACT</label>
+<input class="text" id="contact" placeholder="Enter contact number">
+</div>
+
+<div>
+<label class="title" id="emailLabel">EMAIL</label>
+<input class="text" id="email" placeholder="Enter email address">
+</div>
+
+<div>
+<label class="title" id="projectLabel">PROJECT / BUSINESS NAME</label>
+<input class="text" id="project" placeholder="Enter project name">
+</div>
+
+</div>
+
+<div class="final">
+<input class="check" id="finalCheck" type="checkbox">
+<label for="finalCheck" id="finalText">
+I confirm that I have read and understood the applicable Terms &
+Conditions of Algorithm Pulse and agree to proceed according to the
+mutually agreed project scope, pricing and requirements.
+</label>
+</div>
+
+<button class="acceptBtn" id="acceptBtn" onclick="acceptTerms()">
+Agree & Accept →
+</button>
+
+<div class="success" id="success">
+<strong>✓ Terms Accepted</strong><br><br>
+<span id="successText"></span>
+</div>
+
+</div>
+</main>
+
+<footer>
+<strong>Algorithm Pulse</strong> · Digital Innovation Studio<br><br>
+Founder & CEO — Aaditya Tiwari<br><br>
+© 2026 Algorithm Pulse. All rights reserved.
+</footer>
+
+
+<!-- SANIA -->
+
+<button class="saniaOpen" onclick="toggleSania()">🤖</button>
+
+<div id="sania">
+
+<div class="saniaHead">
+<div>
+<div class="saniaTitle">Sania AI</div>
+<div class="saniaSub">Algorithm Pulse Assistant</div>
+</div>
+<button class="close" onclick="toggleSania()">×</button>
+</div>
+
+<div class="chat" id="chat">
+
+<div class="msg ai">
+🙏 Radhe Radhe!<br><br>
+मैं Sania हूँ, Algorithm Pulse की AI Assistant.
+आप Algorithm Pulse की services, website development,
+SEO, social media, branding, content creation और video
+editing के बारे में मुझसे पूछ सकते हैं।
+</div>
+
+</div>
+
+<div class="chatInput">
+
+<button class="iconBtn" onclick="startMic()" title="Speak">🎤</button>
+
+<input id="chatInput"
+placeholder="Ask Sania..."
+onkeydown="if(event.key==='Enter')sendMessage()">
+
+<button class="iconBtn send" onclick="sendMessage()">➤</button>
+
+</div>
+
+</div>
+
+
+<script>
+
+const translations={
+
+en:{
+eyebrow:"DIGITAL INNOVATION STUDIO",
+title:'Terms <span>&</span><br>Conditions.',
+intro:"Please carefully review the terms before confirming your project with Algorithm Pulse.",
+notice:"<strong>Important:</strong> Please read each applicable term carefully and tick the checkbox after reviewing it.",
+accept:"Final Acceptance",
+acceptText:"Enter your details and confirm that you have reviewed and understood the applicable terms.",
+name:"CLIENT NAME",
+contact:"WHATSAPP / CONTACT",
+email:"EMAIL",
+project:"PROJECT / BUSINESS NAME",
+final:"I confirm that I have read and understood the applicable Terms & Conditions of Algorithm Pulse and agree to proceed according to the mutually agreed project scope, pricing and requirements.",
+button:"Agree & Accept →",
+placeholder:"Enter your full name",
+terms:[
+["Project Scope","The services provided by Algorithm Pulse will be based on the project scope, requirements and deliverables agreed with the client before work begins."],
+["Pricing & Payment","Project pricing and payment milestones will be communicated and agreed before commencement."],
+["Additional Work","Requests outside the agreed scope may require additional charges and/or additional delivery time."],
+["Revisions","Revisions will be handled according to the revision limits agreed for the project."],
+["Client Responsibilities","The client is responsible for providing accurate information, content, images, logos and approvals required for the project."],
+["Content & Copyright","The client must have appropriate rights or permissions for material supplied to Algorithm Pulse."],
+["Domain & Hosting","Domain, hosting, premium plugins and third-party services are separate unless explicitly included in the agreed price."],
+["Delivery Timeline","Delivery depends on project scope, feedback, approvals and availability of required materials."],
+["Cancellation & Refunds","Cancellation and refund matters depend on the project stage, completed work and the specific agreement with the client."],
+["Intellectual Property","Ownership or usage rights for final project materials depend on the agreed payment and project arrangement."],
+["AI & Third-Party Tools","Algorithm Pulse may use AI tools, APIs, hosting providers and other third-party technologies where appropriate."],
+["Support & Maintenance","Post-delivery support and maintenance will be provided according to the agreed package or support arrangement."],
+["Confidentiality","Both parties should take reasonable care when handling confidential business and project information."],
+["Service Limitations","External outages, third-party failures and circumstances beyond reasonable control may affect service availability."],
+["Client Approval","The client should review the final project and communicate required corrections within the agreed revision period."]
+]
+},
+
+hi:{
+eyebrow:"डिजिटल इनोवेशन स्टूडियो",
+title:'Terms <span>&</span><br>Conditions.',
+intro:"Algorithm Pulse के साथ प्रोजेक्ट शुरू करने से पहले कृपया सभी नियम और शर्तें ध्यान से पढ़ें।",
+notice:"<strong>महत्वपूर्ण:</strong> प्रत्येक लागू शर्त को ध्यान से पढ़ें और समझने के बाद checkbox पर tick करें।",
+accept:"अंतिम स्वीकृति",
+acceptText:"अपनी जानकारी भरें और पुष्टि करें कि आपने लागू Terms & Conditions पढ़ और समझ ली हैं।",
+name:"क्लाइंट का नाम",
+contact:"WHATSAPP / संपर्क",
+email:"ईमेल",
+project:"प्रोजेक्ट / बिजनेस नाम",
+final:"मैं पुष्टि करता/करती हूँ कि मैंने Algorithm Pulse की लागू Terms & Conditions पढ़ और समझ ली हैं तथा सहमत प्रोजेक्ट scope, pricing और requirements के अनुसार आगे बढ़ने के लिए सहमत हूँ।",
+button:"सहमत हूँ और स्वीकार करता/करती हूँ →",
+placeholder:"अपना पूरा नाम लिखें",
+terms:[
+["प्रोजेक्ट का दायरा","Algorithm Pulse द्वारा दी जाने वाली services उस scope, requirements और deliverables के अनुसार होंगी जो काम शुरू होने से पहले client के साथ तय किए गए हों।"],
+["कीमत और भुगतान","Project की pricing और payment milestones काम शुरू होने से पहले client के साथ तय किए जाएंगे।"],
+["अतिरिक्त काम","Original scope से बाहर के काम के लिए अतिरिक्त charges और/या अतिरिक्त समय लग सकता है।"],
+["Revisions","Revisions उसी संख्या और प्रकार के अनुसार किए जाएंगे जो project के लिए पहले तय किए गए हों।"],
+["Client की जिम्मेदारी","Client को project के लिए जरूरी सही information, content, images, logos और approvals उपलब्ध कराने होंगे।"],
+["Content और Copyright","Client द्वारा दिए गए material के लिए उचित rights या permissions होना client की जिम्मेदारी है।"],
+["Domain और Hosting","Domain, hosting, premium plugins और third-party services अलग charges हो सकते हैं, जब तक वे agreed price में शामिल न हों।"],
+["Delivery Timeline","Delivery project scope, client feedback, approvals और जरूरी materials की उपलब्धता पर निर्भर करेगी।"],
+["Cancellation और Refund","Cancellation और refund project की स्थिति, किए गए काम और client के साथ हुए specific agreement पर निर्भर होंगे।"],
+["Intellectual Property","Final project materials के ownership या usage rights agreed payment और project arrangement पर निर्भर करेंगे।"],
+["AI और Third-Party Tools","Algorithm Pulse आवश्यकता के अनुसार AI tools, APIs, hosting और अन्य third-party technologies का उपयोग कर सकता है।"],
+["Support और Maintenance","Post-delivery support और maintenance agreed package या support arrangement के अनुसार दिया जाएगा।"],
+["Confidentiality","दोनों parties को confidential business और project information को सुरक्षित रखने का उचित ध्यान रखना चाहिए।"],
+["Service Limitations","External outages, third-party failures और हमारे reasonable control से बाहर की परिस्थितियां service availability को प्रभावित कर सकती हैं।"],
+["Client Approval","Client को final project review करके agreed revision period के अंदर जरूरी corrections बताने चाहिए।"]
+]
+}
+
+};
+
+let lang="en";
+
+function renderTerms(){
+
+const t=translations[lang];
+
+document.getElementById("eyebrow").innerHTML=t.eyebrow;
+document.getElementById("title").innerHTML=t.title;
+document.getElementById("intro").innerHTML=t.intro;
+document.getElementById("notice").innerHTML=t.notice;
+document.getElementById("acceptTitle").innerHTML=t.accept;
+document.getElementById("acceptText").innerHTML=t.acceptText;
+document.getElementById("nameLabel").innerHTML=t.name;
+document.getElementById("contactLabel").innerHTML=t.contact;
+document.getElementById("emailLabel").innerHTML=t.email;
+document.getElementById("projectLabel").innerHTML=t.project;
+document.getElementById("finalText").innerHTML=t.final;
+document.getElementById("acceptBtn").innerHTML=t.button;
+document.getElementById("clientName").placeholder=t.placeholder;
+
+let html="";
+
+t.terms.forEach((term,i)=>{
+
+html+=`
+<div class="term">
+<div class="termrow">
+<input class="check termCheck" type="checkbox">
+<div>
+<h2>${String(i+1).padStart(2,"0")}. ${term[0]}</h2>
+<p>${term[1]}</p>
+</div>
+</div>
+</div>`;
+
+});
+
+document.getElementById("terms").innerHTML=html;
+
+document.querySelectorAll(".termCheck")
+.forEach(x=>x.addEventListener("change",updateButton));
+
+updateButton();
+}
+
+function setLang(x){
+
+lang=x;
+
+document.getElementById("enBtn")
+.classList.toggle("active",x==="en");
+
+document.getElementById("hiBtn")
+.classList.toggle("active",x==="hi");
+
+renderTerms();
+
+}
+
+function updateButton(){
+
+const checks=document.querySelectorAll(".termCheck");
+
+const all=[...checks].every(x=>x.checked);
+
+const final=document.getElementById("finalCheck").checked;
+
+const name=document.getElementById("clientName").value.trim();
+
+document.getElementById("acceptBtn")
+.classList.toggle("ready",all && final && name);
+
+}
+
+document.getElementById("finalCheck")
+.addEventListener("change",updateButton);
+
+document.getElementById("clientName")
+.addEventListener("input",updateButton);
+
+
+function acceptTerms(){
+
+const checks=document.querySelectorAll(".termCheck");
+
+if(![...checks].every(x=>x.checked)){
+alert(lang==="hi"?
+"कृपया सभी Terms पढ़कर checkbox tick करें।":
+"Please review and tick all applicable terms.");
+return;
+}
+
+if(!document.getElementById("finalCheck").checked){
+alert(lang==="hi"?
+"कृपया final agreement tick करें।":
+"Please confirm the final agreement.");
+return;
+}
+
+const name=document.getElementById("clientName").value.trim();
+
+if(!name){
+alert(lang==="hi"?
+"कृपया अपना नाम लिखें।":
+"Please enter your name.");
+return;
+}
+
+const data={
+clientName:name,
+contact:document.getElementById("contact").value,
+email:document.getElementById("email").value,
+project:document.getElementById("project").value,
+acceptedAt:new Date().toISOString(),
+owner:"Aaditya Tiwari",
+brand:"Algorithm Pulse"
+};
+
+localStorage.setItem(
+"algorithmPulseTermsAcceptance",
+JSON.stringify(data)
+);
+
+document.getElementById("successText").innerHTML=
+lang==="hi"
+?`धन्यवाद ${name}। आपकी acceptance इस device पर record हो गई है।<br><br>Algorithm Pulse — Founder & CEO Aaditya Tiwari`
+:`Thank you ${name}. Your acceptance has been recorded on this device for reference.<br><br>Algorithm Pulse — Founder & CEO Aaditya Tiwari`;
+
+document.getElementById("success")
+.classList.add("show");
+
+document.getElementById("acceptBtn").innerHTML="✓ Accepted";
+
+}
+
+
+function toggleSania(){
+
+const box=document.getElementById("sania");
+
+box.style.display=
+box.style.display==="block"?"none":"block";
+
+}
+
+
+function addMessage(text,type){
+
+const div=document.createElement("div");
+
+div.className="msg "+type;
+
+div.innerHTML=text;
+
+document.getElementById("chat").appendChild(div);
+
+document.getElementById("chat").scrollTop=
+document.getElementById("chat").scrollHeight;
+
+}
+
+
+function sendMessage(){
+
+const input=document.getElementById("chatInput");
+
+const question=input.value.trim();
+
+if(!question)return;
+
+addMessage(question,"user");
+
+input.value="";
+
+setTimeout(()=>{
+
+const answer=getSaniaAnswer(question);
+
+addMessage(answer,"ai");
+
+speak(answer.replace(/<[^>]*>/g,""));
+
+},350);
+
+}
+
+
+function getSaniaAnswer(q){
+
+q=q.toLowerCase();
+
+let answer="";
+
+if(q.includes("service")||q.includes("सेवा")){
+
+answer="Algorithm Pulse में Website Development, SEO, Social Media Management, Branding & Design, Content Creation और Video Editing जैसी digital services उपलब्ध हैं।";
+
+}
+
+else if(q.includes("website")||q.includes("वेबसाइट")){
+
+answer="🙏 Radhe Radhe! Algorithm Pulse professional, responsive और modern websites बनाने में मदद करता है। Project की requirements के अनुसार design और development किया जाता है।";
+
+}
+
+else if(q.includes("seo")){
+
+answer="🙏 Radhe Radhe! Algorithm Pulse SEO के माध्यम से website की search visibility और online presence बेहतर करने पर काम करता है।";
+
+}
+
+else if(q.includes("social")||q.includes("instagram")){
+
+answer="🙏 Radhe Radhe! Algorithm Pulse Social Media Management, content planning और digital presence से जुड़ी services provide करता है।";
+
+}
+
+else if(q.includes("brand")||q.includes("logo")){
+
+answer="🙏 Radhe Radhe! Algorithm Pulse Branding & Design में logos, visual identity और अन्य creative brand assets पर काम करता है।";
+
+}
+
+else if(q.includes("video")){
+
+answer="🙏 Radhe Radhe! Algorithm Pulse Video Editing और Content Creation services भी provide करता है।";
+
+}
+
+else if(q.includes("owner")||q.includes("founder")||q.includes("मालिक")){
+
+answer="🙏 Radhe Radhe! Algorithm Pulse के Founder & CEO Aaditya Tiwari हैं।";
+
+}
+
+else if(q.includes("terms")||q.includes("condition")||q.includes("शर्त")){
+
+answer="🙏 Radhe Radhe! आप इस page पर project scope, payment, revisions, copyright, delivery, support और अन्य Terms & Conditions पढ़ सकते हैं।";
+
+}
+
+else if(q.includes("hello")||q.includes("hi")||q.includes("hey")||q.includes("नमस्ते")){
+
+answer="🙏 Radhe Radhe! मैं Sania AI हूँ। Algorithm Pulse के बारे में आप मुझसे कोई भी सवाल पूछ सकते हैं।";
+
+}
+
+else{
+
+answer="🙏 Radhe Radhe! मैं Sania AI हूँ। मैं Algorithm Pulse की website, services, SEO, social media, branding, content creation, video editing और Terms & Conditions के बारे में जानकारी दे सकती हूँ। आप अपना सवाल थोड़ा और specific पूछें।";
+
+}
+
+return answer;
+
+}
+
+
+function speak(text){
+
+if(!("speechSynthesis" in window))return;
+
+speechSynthesis.cancel();
+
+const voice=new SpeechSynthesisUtterance(text);
+
+voice.lang=lang==="hi"?"hi-IN":"en-US";
+
+voice.rate=.95;
+
+speechSynthesis.speak(voice);
+
+}
+
+
+function startMic(){
+
+const SpeechRecognition=
+window.SpeechRecognition||
+window.webkitSpeechRecognition;
+
+if(!SpeechRecognition){
+
+alert("Your browser does not support voice input.");
+
+return;
+}
+
+const recognition=new SpeechRecognition();
+
+recognition.lang=lang==="hi"?"hi-IN":"en-IN";
+
+recognition.interimResults=false;
+
+recognition.start();
+
+recognition.onresult=function(event){
+
+document.getElementById("chatInput").value=
+event.results[0][0].transcript;
+
+sendMessage();
+
+};
+
+recognition.onerror=function(){
+
+alert("Mic could not be started. Please allow microphone permission.");
+
+};
+
+}
+
+
+renderTerms();
+
+</script>
+
+</body>
+</html>
