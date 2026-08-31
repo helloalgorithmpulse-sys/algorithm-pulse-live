@@ -1,0 +1,3647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="Algorithm Pulse — Premium Digital Innovation Studio">
+<title>Algorithm Pulse | Digital Innovation Studio</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+font-family:Inter,Arial,sans-serif;
+background:#050102;
+color:#fff;
+overflow-x:hidden;
+}
+
+:root{
+--red:#651225;
+--red2:#3b0714;
+--red3:#8e2038;
+--silver:#e8e6e8;
+--muted:#aaa0a4;
+--glass:rgba(255,255,255,.035);
+--border:rgba(180,70,95,.18);
+}
+
+body:before,
+body:after{
+content:"";
+position:fixed;
+width:600px;
+height:600px;
+border-radius:50%;
+filter:blur(160px);
+z-index:-5;
+pointer-events:none;
+}
+
+body:before{
+left:-350px;
+top:-300px;
+background:rgba(100,10,35,.28);
+}
+
+body:after{
+right:-350px;
+bottom:-300px;
+background:rgba(80,5,25,.24);
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+button,
+input,
+textarea{
+font:inherit;
+}
+
+.container{
+width:min(1180px,92%);
+margin:auto;
+}
+
+.section{
+padding:100px 0;
+}
+
+.label{
+color:#b95a70;
+font-size:11px;
+font-weight:800;
+letter-spacing:3px;
+text-transform:uppercase;
+margin-bottom:15px;
+}
+
+.title{
+font-size:clamp(38px,5vw,64px);
+line-height:1.03;
+letter-spacing:-3px;
+}
+
+.subtitle{
+color:var(--muted);
+max-width:720px;
+margin-top:18px;
+font-size:15px;
+line-height:1.8;
+}
+
+.gradient{
+background:linear-gradient(90deg,#fff,#d7cdd0,#a83a56);
+-webkit-background-clip:text;
+background-clip:text;
+color:transparent;
+}
+
+.glass{
+background:linear-gradient(
+145deg,
+rgba(255,255,255,.055),
+rgba(255,255,255,.015)
+);
+border:1px solid var(--border);
+backdrop-filter:blur(20px);
+-webkit-backdrop-filter:blur(20px);
+box-shadow:
+inset 0 1px 0 rgba(255,255,255,.035),
+0 25px 80px rgba(0,0,0,.3);
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+position:fixed;
+left:0;
+right:0;
+top:0;
+z-index:1000;
+background:rgba(5,1,2,.78);
+backdrop-filter:blur(22px);
+border-bottom:1px solid rgba(180,70,95,.1);
+}
+
+.nav{
+height:76px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+font-size:19px;
+font-weight:900;
+}
+
+.logo-box{
+width:39px;
+height:39px;
+display:grid;
+place-items:center;
+border-radius:12px;
+background:linear-gradient(135deg,#8d2941,#3b0714);
+box-shadow:0 0 35px rgba(120,20,50,.35);
+}
+
+.logo-word{
+display:inline-block;
+cursor:default;
+}
+
+.menu{
+display:none;
+background:none;
+border:0;
+color:white;
+font-size:26px;
+cursor:pointer;
+}
+
+.nav-links{
+display:flex;
+gap:24px;
+align-items:center;
+list-style:none;
+}
+
+.nav-links a{
+color:#aaa1a5;
+font-size:12px;
+transition:.25s;
+}
+
+.nav-links a:hover{
+color:white;
+}
+
+.nav-cta{
+padding:10px 15px;
+border:1px solid rgba(160,50,75,.35);
+border-radius:11px;
+background:rgba(120,20,50,.12);
+}
+
+/* ================= LANGUAGE ================= */
+
+.lang-wrap{
+position:relative;
+}
+
+.lang-btn{
+background:rgba(255,255,255,.035);
+border:1px solid var(--border);
+color:#ddd;
+padding:9px 12px;
+border-radius:10px;
+cursor:pointer;
+font-size:12px;
+}
+
+.lang-menu{
+display:none;
+position:absolute;
+right:0;
+top:45px;
+width:145px;
+padding:8px;
+border-radius:14px;
+background:#100609;
+border:1px solid var(--border);
+box-shadow:0 20px 50px rgba(0,0,0,.5);
+}
+
+.lang-menu.active{
+display:block;
+}
+
+.lang-menu button{
+display:block;
+width:100%;
+padding:10px;
+border:0;
+background:none;
+color:#bbb;
+text-align:left;
+border-radius:8px;
+cursor:pointer;
+}
+
+.lang-menu button:hover{
+background:rgba(120,20,50,.2);
+color:white;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+min-height:100vh;
+padding-top:135px;
+display:grid;
+grid-template-columns:1.1fr .9fr;
+gap:50px;
+align-items:center;
+}
+
+.hero h1{
+font-size:clamp(52px,7vw,88px);
+line-height:.94;
+letter-spacing:-5px;
+}
+
+.hero-description{
+max-width:640px;
+margin:28px 0 34px;
+color:#aaa0a4;
+font-size:16px;
+line-height:1.85;
+}
+
+.buttons{
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+}
+
+.btn{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+padding:14px 21px;
+border-radius:13px;
+border:1px solid var(--border);
+font-weight:800;
+cursor:pointer;
+transition:.3s;
+}
+
+.primary{
+background:linear-gradient(135deg,#8b2943,#480817);
+box-shadow:0 15px 50px rgba(100,10,35,.3);
+}
+
+.primary:hover{
+transform:translateY(-3px);
+box-shadow:0 20px 65px rgba(120,20,50,.45);
+}
+
+.secondary{
+background:rgba(255,255,255,.035);
+}
+
+.secondary:hover{
+background:rgba(255,255,255,.07);
+transform:translateY(-2px);
+}
+
+/* ================= HERO VISUAL ================= */
+
+.visual{
+height:520px;
+display:grid;
+place-items:center;
+position:relative;
+}
+
+.core{
+width:295px;
+height:295px;
+border-radius:50%;
+background:
+radial-gradient(circle at 30% 25%,#eee7e9 0%,transparent 9%),
+radial-gradient(circle,#a23b55,#400918 47%,#080102 75%);
+box-shadow:
+0 0 130px rgba(120,20,50,.32),
+inset 0 0 80px rgba(0,0,0,.7);
+animation:float 5s ease-in-out infinite;
+}
+
+.orbit,
+.orbit2{
+position:absolute;
+border-radius:50%;
+border:1px solid rgba(160,50,75,.22);
+}
+
+.orbit{
+width:400px;
+height:400px;
+transform:rotate(25deg);
+}
+
+.orbit2{
+width:470px;
+height:270px;
+transform:rotate(-30deg);
+border-color:rgba(160,50,75,.13);
+}
+
+.founder-card{
+position:absolute;
+right:0;
+bottom:10px;
+width:275px;
+padding:18px;
+border-radius:19px;
+}
+
+.founder-small{
+font-size:10px;
+color:#777;
+letter-spacing:2px;
+text-transform:uppercase;
+}
+
+.founder-name{
+font-size:18px;
+font-weight:900;
+margin-top:5px;
+}
+
+.founder-role{
+font-size:12px;
+color:#b95a70;
+margin-top:4px;
+}
+
+/* ================= WORD SHAKE ================= */
+
+.name-word,
+.logo-word{
+display:inline-block;
+}
+
+.name-word:hover,
+.logo-word:hover{
+animation:wordShake .38s ease;
+}
+
+/* ================= STATS ================= */
+
+.stats{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:15px;
+margin-top:45px;
+}
+
+.stat{
+padding:27px;
+border-radius:20px;
+text-align:center;
+transition:transform .3s;
+}
+
+.stat strong{
+display:block;
+font-size:30px;
+}
+
+.stat span{
+display:block;
+margin-top:5px;
+font-size:10px;
+color:#777;
+}
+
+/* ================= FOUNDER ================= */
+
+.founder-section{
+display:grid;
+grid-template-columns:.75fr 1.25fr;
+gap:20px;
+}
+
+.founder-profile,
+.founder-text{
+padding:40px;
+border-radius:25px;
+}
+
+.founder-profile{
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+}
+
+.avatar{
+width:125px;
+height:125px;
+display:grid;
+place-items:center;
+border-radius:35px;
+font-size:37px;
+font-weight:900;
+background:linear-gradient(135deg,#9b304c,#3b0714);
+box-shadow:0 0 70px rgba(120,20,50,.3);
+margin-bottom:20px;
+}
+
+.founder-profile h3{
+font-size:24px;
+}
+
+.founder-profile p{
+color:#b95a70;
+font-size:12px;
+margin-top:5px;
+}
+
+.founder-text p{
+color:var(--muted);
+font-size:14px;
+line-height:1.85;
+margin-top:16px;
+}
+
+/* ================= SERVICES ================= */
+
+.grid-3{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
+margin-top:45px;
+}
+
+.service{
+padding:30px;
+min-height:215px;
+border-radius:22px;
+cursor:pointer;
+transition:
+transform .3s,
+border-color .3s,
+box-shadow .3s;
+}
+
+.service:hover{
+transform:translateY(-9px);
+border-color:rgba(180,70,95,.45);
+box-shadow:0 25px 70px rgba(100,10,35,.18);
+}
+
+.icon{
+width:51px;
+height:51px;
+display:grid;
+place-items:center;
+border-radius:15px;
+background:rgba(120,20,50,.12);
+border:1px solid rgba(180,70,95,.18);
+margin-bottom:20px;
+font-size:21px;
+}
+
+.service h3{
+font-size:18px;
+margin-bottom:9px;
+}
+
+.service p{
+color:var(--muted);
+font-size:13px;
+line-height:1.7;
+}
+
+/* ================= PORTFOLIO ================= */
+
+.project{
+min-height:280px;
+border-radius:22px;
+overflow:hidden;
+transition:.3s;
+}
+
+.project:hover{
+transform:translateY(-7px);
+}
+
+.project-art{
+height:280px;
+padding:25px;
+display:flex;
+align-items:flex-end;
+background:
+radial-gradient(circle at 70% 25%,rgba(150,40,70,.28),transparent 30%),
+linear-gradient(145deg,#1c0a10,#060102);
+}
+
+.project:nth-child(2) .project-art{
+background:
+radial-gradient(circle at 25% 30%,rgba(120,20,50,.3),transparent 30%),
+linear-gradient(145deg,#18080e,#050102);
+}
+
+.project:nth-child(3) .project-art{
+background:
+radial-gradient(circle at 75% 70%,rgba(170,50,80,.25),transparent 30%),
+linear-gradient(145deg,#1d0b12,#050102);
+}
+
+.project h3{
+font-size:20px;
+}
+
+.project p{
+color:#999095;
+font-size:12px;
+margin-top:5px;
+}
+
+/* ================= WHY ================= */
+
+.why{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:18px;
+margin-top:45px;
+}
+
+.why-card{
+padding:30px;
+border-radius:22px;
+transition:.3s;
+}
+
+.why-card:hover{
+transform:translateY(-5px);
+}
+
+.why-card h3{
+margin-bottom:9px;
+}
+
+.why-card p{
+color:var(--muted);
+font-size:13px;
+line-height:1.7;
+}
+
+/* ================= PRICING ================= */
+
+.price-card{
+position:relative;
+padding:30px;
+border-radius:22px;
+transition:.3s;
+}
+
+.price-card:hover{
+transform:translateY(-7px);
+}
+
+.price-card.featured{
+border-color:rgba(180,70,95,.42);
+box-shadow:0 30px 90px rgba(100,10,35,.2);
+}
+
+.popular{
+position:absolute;
+top:18px;
+right:18px;
+padding:6px 10px;
+border-radius:20px;
+background:rgba(120,20,50,.14);
+color:#cf778d;
+font-size:9px;
+font-weight:900;
+}
+
+.price{
+font-size:37px;
+font-weight:900;
+margin:16px 0;
+}
+
+.price small{
+font-size:10px;
+color:#777;
+font-weight:400;
+}
+
+.features{
+list-style:none;
+margin:20px 0 25px;
+}
+
+.features li{
+color:#b5abad;
+font-size:13px;
+margin:11px 0;
+}
+
+.features li:before{
+content:"✓";
+color:#b95a70;
+margin-right:8px;
+}
+
+/* ================= HOW ================= */
+
+.steps{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:15px;
+margin-top:45px;
+}
+
+.step{
+padding:27px;
+border-radius:20px;
+}
+
+.step-num{
+font-size:12px;
+color:#b95a70;
+font-weight:900;
+}
+
+.step h3{
+margin-top:12px;
+font-size:16px;
+}
+
+.step p{
+margin-top:8px;
+color:var(--muted);
+font-size:12px;
+line-height:1.7;
+}
+
+/* ================= CLIENT SYSTEM ================= */
+
+.client-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:18px;
+margin-top:45px;
+}
+
+.client-card{
+padding:30px;
+border-radius:22px;
+}
+
+.client-card h3{
+margin-bottom:12px;
+}
+
+.client-card p,
+.client-card li{
+color:var(--muted);
+font-size:13px;
+line-height:1.8;
+}
+
+.client-card ul{
+list-style:none;
+}
+
+.client-card li{
+margin:7px 0;
+}
+
+.client-card li:before{
+content:"✓";
+color:#b95a70;
+margin-right:8px;
+}
+
+/* ================= SANIA ================= */
+
+.sania{
+padding:38px;
+border-radius:28px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+align-items:center;
+}
+
+.sania-title{
+font-size:45px;
+line-height:1.03;
+}
+
+.sania-description{
+color:var(--muted);
+margin-top:15px;
+font-size:14px;
+line-height:1.8;
+}
+
+.chat{
+padding:20px;
+border-radius:21px;
+background:rgba(0,0,0,.3);
+border:1px solid rgba(255,255,255,.07);
+}
+
+.chat-head{
+display:flex;
+gap:10px;
+align-items:center;
+padding-bottom:15px;
+border-bottom:1px solid rgba(255,255,255,.07);
+}
+
+.sania-icon{
+width:39px;
+height:39px;
+display:grid;
+place-items:center;
+border-radius:12px;
+background:rgba(120,20,50,.16);
+}
+
+.online{
+display:inline-block;
+width:7px;
+height:7px;
+border-radius:50%;
+background:#75d99d;
+margin-left:4px;
+}
+
+.messages{
+height:250px;
+overflow-y:auto;
+padding-right:4px;
+}
+
+.message{
+max-width:88%;
+padding:12px;
+margin-top:15px;
+border-radius:12px;
+background:rgba(255,255,255,.045);
+color:#c9c1c4;
+font-size:13px;
+line-height:1.6;
+}
+
+.message.user{
+margin-left:auto;
+background:rgba(120,20,50,.2);
+color:#eadde1;
+}
+
+.chat-input{
+display:flex;
+gap:8px;
+margin-top:15px;
+}
+
+.chat-input input{
+flex:1;
+padding:11px;
+border-radius:10px;
+border:1px solid var(--border);
+background:rgba(255,255,255,.035);
+color:white;
+outline:none;
+}
+
+.chat-input button{
+width:45px;
+border:0;
+border-radius:10px;
+background:linear-gradient(135deg,#8b2943,#480817);
+color:white;
+cursor:pointer;
+}
+
+.voice-controls{
+display:flex;
+gap:8px;
+margin-top:9px;
+}
+
+.voice-btn{
+flex:1;
+padding:8px;
+border-radius:9px;
+border:1px solid rgba(255,255,255,.08);
+background:rgba(255,255,255,.035);
+color:#999;
+cursor:pointer;
+font-size:11px;
+}
+
+/* ================= CONTACT ================= */
+
+.contact{
+display:grid;
+grid-template-columns:.8fr 1.2fr;
+gap:20px;
+margin-top:45px;
+}
+
+.contact-card{
+padding:32px;
+border-radius:23px;
+}
+
+.contact-card p{
+color:var(--muted);
+font-size:14px;
+line-height:1.8;
+margin:12px 0 25px;
+}
+
+.contact-item{
+padding:13px 0;
+border-bottom:1px solid rgba(255,255,255,.06);
+color:#bdb4b7;
+font-size:13px;
+}
+
+.form-group{
+margin-bottom:15px;
+}
+
+.form-group label{
+display:block;
+margin-bottom:7px;
+color:#bdb4b7;
+font-size:12px;
+}
+
+.form-group input,
+.form-group textarea{
+width:100%;
+padding:13px;
+border-radius:11px;
+border:1px solid rgba(255,255,255,.08);
+background:rgba(255,255,255,.03);
+color:white;
+outline:none;
+}
+
+.form-group textarea{
+min-height:125px;
+resize:vertical;
+}
+
+/* ================= LEGAL ================= */
+
+.legal-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:15px;
+margin-top:40px;
+}
+
+.legal{
+padding:25px;
+border-radius:20px;
+}
+
+.legal h3{
+font-size:16px;
+margin-bottom:9px;
+}
+
+.legal p{
+color:var(--muted);
+font-size:12px;
+line-height:1.7;
+}
+
+.legal a{
+display:inline-block;
+margin-top:13px;
+color:#c05b73;
+font-size:11px;
+}
+
+/* ================= CTA ================= */
+
+.cta{
+padding:70px 35px;
+border-radius:28px;
+text-align:center;
+background:
+radial-gradient(circle at 50% 0%,rgba(130,20,50,.22),transparent 48%),
+rgba(255,255,255,.03);
+border:1px solid var(--border);
+}
+
+.cta h2{
+font-size:clamp(37px,5vw,61px);
+line-height:1;
+letter-spacing:-2px;
+}
+
+.cta p{
+max-width:600px;
+margin:18px auto 27px;
+color:var(--muted);
+line-height:1.8;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+padding:45px 0;
+border-top:1px solid rgba(255,255,255,.06);
+}
+
+.footer{
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:25px;
+}
+
+.footer-copy{
+color:#686064;
+font-size:11px;
+margin-top:8px;
+}
+
+.footer-links{
+display:flex;
+gap:18px;
+flex-wrap:wrap;
+}
+
+.footer-links a{
+color:#858083;
+font-size:11px;
+}
+
+/* ================= FLOAT ================= */
+
+.sania-float{
+position:fixed;
+right:22px;
+bottom:22px;
+z-index:900;
+}
+
+.sania-btn{
+padding:13px 17px;
+border-radius:999px;
+border:1px solid rgba(170,60,85,.3);
+background:rgba(12,3,6,.93);
+color:white;
+cursor:pointer;
+box-shadow:0 15px 45px rgba(0,0,0,.5);
+}
+
+/* ================= MODAL ================= */
+
+.modal{
+display:none;
+position:fixed;
+inset:0;
+z-index:2000;
+background:rgba(0,0,0,.78);
+backdrop-filter:blur(10px);
+align-items:center;
+justify-content:center;
+padding:20px;
+}
+
+.modal.active{
+display:flex;
+}
+
+.modal-box{
+width:min(680px,100%);
+max-height:82vh;
+overflow:auto;
+padding:32px;
+border-radius:23px;
+position:relative;
+}
+
+.close{
+position:absolute;
+right:18px;
+top:12px;
+border:0;
+background:none;
+color:#999;
+font-size:26px;
+cursor:pointer;
+}
+
+.modal-box p{
+color:var(--muted);
+font-size:13px;
+line-height:1.85;
+margin-top:18px;
+white-space:pre-line;
+}
+
+/* ================= ROYAL SHAKE ================= */
+
+/* सभी glass boxes पर हल्का premium shake */
+.glass:hover{
+animation:royalBoxShake .38s ease;
+}
+
+/* जिन cards में पहले से transform है,
+   उनके hover पर भी shake चलेगा */
+.service:hover,
+.project:hover,
+.why-card:hover,
+.price-card:hover,
+.stat:hover,
+.step:hover,
+.client-card:hover,
+.legal:hover,
+.contact-card:hover,
+.founder-profile:hover,
+.founder-text:hover,
+.sania:hover{
+animation:royalBoxShake .38s ease;
+}
+
+/* Terms/Policy cards को खास तौर पर shake */
+.legal:hover{
+animation:legalShake .42s ease;
+}
+
+@keyframes royalBoxShake{
+
+0%{
+transform:translateY(0) translateX(0) rotate(0deg);
+}
+
+20%{
+transform:translateY(-3px) translateX(-2px) rotate(-.45deg);
+}
+
+40%{
+transform:translateY(-5px) translateX(2px) rotate(.45deg);
+}
+
+60%{
+transform:translateY(-4px) translateX(-1px) rotate(-.3deg);
+}
+
+80%{
+transform:translateY(-2px) translateX(1px) rotate(.25deg);
+}
+
+100%{
+transform:translateY(0) translateX(0) rotate(0deg);
+}
+
+}
+
+@keyframes legalShake{
+
+0%{
+transform:translateY(0) rotate(0);
+}
+
+20%{
+transform:translateY(-4px) translateX(-2px) rotate(-.7deg);
+}
+
+40%{
+transform:translateY(-6px) translateX(2px) rotate(.7deg);
+}
+
+60%{
+transform:translateY(-5px) translateX(-2px) rotate(-.45deg);
+}
+
+80%{
+transform:translateY(-2px) translateX(1px) rotate(.25deg);
+}
+
+100%{
+transform:translateY(0) translateX(0) rotate(0);
+}
+
+}
+
+@keyframes float{
+
+0%,100%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-15px);
+}
+
+}
+
+@keyframes wordShake{
+
+0%{
+transform:translateX(0) rotate(0);
+}
+
+25%{
+transform:translateX(-2px) rotate(-1deg);
+}
+
+50%{
+transform:translateX(2px) rotate(1deg);
+}
+
+75%{
+transform:translateX(-1px) rotate(-.5deg);
+}
+
+100%{
+transform:translateX(0) rotate(0);
+}
+
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:950px){
+
+.nav-links{
+display:none;
+position:absolute;
+top:76px;
+left:4%;
+right:4%;
+padding:20px;
+flex-direction:column;
+align-items:flex-start;
+background:#0b0306;
+border:1px solid var(--border);
+border-radius:18px;
+}
+
+.nav-links.active{
+display:flex;
+}
+
+.menu{
+display:block;
+}
+
+.hero{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+.hero-description{
+margin-left:auto;
+margin-right:auto;
+}
+
+.buttons{
+justify-content:center;
+}
+
+.stats,
+.grid-3{
+grid-template-columns:repeat(2,1fr);
+}
+
+.founder-section,
+.sania,
+.contact{
+grid-template-columns:1fr;
+}
+
+.steps{
+grid-template-columns:repeat(2,1fr);
+}
+
+.legal-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+@media(max-width:600px){
+
+.section{
+padding:78px 0;
+}
+
+.hero{
+padding-top:120px;
+}
+
+.hero h1{
+font-size:48px;
+letter-spacing:-3px;
+}
+
+.visual{
+height:390px;
+}
+
+.core{
+width:225px;
+height:225px;
+}
+
+.orbit{
+width:300px;
+height:300px;
+}
+
+.orbit2{
+width:340px;
+height:205px;
+}
+
+.founder-card{
+width:220px;
+}
+
+.stats,
+.grid-3,
+.why,
+.client-grid,
+.steps,
+.legal-grid{
+grid-template-columns:1fr;
+}
+
+.sania{
+padding:25px;
+}
+
+.sania-title{
+font-size:34px;
+}
+
+.footer{
+flex-direction:column;
+align-items:flex-start;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+<div class="container nav">
+
+<a href="#home" class="logo">
+
+<span class="logo-box">AP</span>
+
+<span>
+<span class="logo-word">Algorithm</span>
+<span> </span>
+<span class="logo-word">Pulse</span>
+</span>
+
+</a>
+
+<button class="menu" onclick="toggleMenu()">☰</button>
+
+<ul class="nav-links" id="navLinks">
+
+<li><a href="#home" data-i="home">Home</a></li>
+<li><a href="#about" data-i="about">About</a></li>
+<li><a href="#services" data-i="services">Services</a></li>
+<li><a href="#portfolio" data-i="portfolio">Portfolio</a></li>
+<li><a href="#pricing" data-i="pricing">Pricing</a></li>
+<li><a href="#sania" data-i="sania">Sania AI</a></li>
+<li><a href="#contact" class="nav-cta" data-i="contact">Contact</a></li>
+
+<li class="lang-wrap">
+
+<button class="lang-btn" onclick="toggleLanguageMenu()">
+🌐 <span id="langCurrent">EN</span>
+</button>
+
+<div class="lang-menu" id="langMenu">
+
+<button onclick="setLanguage('en')">
+🇺🇸 English
+</button>
+
+<button onclick="setLanguage('hi')">
+🇮🇳 हिंदी
+</button>
+
+</div>
+
+</li>
+
+</ul>
+
+</div>
+
+</header>
+
+<!-- ================= MAIN ================= -->
+
+<main>
+
+<!-- HERO -->
+
+<section class="section" id="home">
+
+<div class="container hero">
+
+<div>
+
+<div class="label" data-i="heroLabel">
+Digital Innovation Studio
+</div>
+
+<h1 data-i="heroTitle">
+We Build
+<span class="gradient">Digital Experiences</span>
+That Move Brands.
+</h1>
+
+<p class="hero-description" data-i="heroDesc">
+Algorithm Pulse creates premium websites, branding, social media experiences
+and intelligent digital solutions for modern businesses.
+</p>
+
+<div class="buttons">
+
+<a href="#contact" class="btn primary" data-i="startProject">
+Start a Project →
+</a>
+
+<a href="#services" class="btn secondary" data-i="explore">
+Explore Services
+</a>
+
+</div>
+
+</div>
+
+<div class="visual">
+
+<div class="orbit"></div>
+<div class="orbit2"></div>
+<div class="core"></div>
+
+<div class="founder-card glass">
+
+<div class="founder-small" data-i="founderSmall">
+Founder & CEO
+</div>
+
+<div class="founder-name">
+
+<span class="name-word">Aaditya</span>
+<span class="name-word">Tiwari</span>
+
+</div>
+
+<div class="founder-role">
+Algorithm Pulse
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="section" id="about">
+
+<div class="container">
+
+<div class="label" data-i="aboutLabel">
+About Algorithm Pulse
+</div>
+
+<h2 class="title" data-i="aboutTitle">
+Technology with creativity.<br>
+Strategy with purpose.
+</h2>
+
+<p class="subtitle" data-i="aboutDesc">
+Algorithm Pulse is a digital innovation brand focused on creating professional,
+modern and scalable digital experiences for businesses and creators.
+</p>
+
+<div class="stats">
+
+<div class="stat glass">
+<strong>24/7</strong>
+<span data-i="stat1">Digital Presence</span>
+</div>
+
+<div class="stat glass">
+<strong>6+</strong>
+<span data-i="stat2">Core Services</span>
+</div>
+
+<div class="stat glass">
+<strong>100%</strong>
+<span data-i="stat3">Custom Approach</span>
+</div>
+
+<div class="stat glass">
+<strong>AI</strong>
+<span data-i="stat4">Future Ready</span>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOUNDER -->
+
+<section class="section">
+
+<div class="container founder-section">
+
+<div class="founder-profile glass">
+
+<div class="avatar">AT</div>
+
+<h3>
+
+<span class="name-word">Aaditya</span>
+<span class="name-word">Tiwari</span>
+
+</h3>
+
+<p data-i="ceo">
+Founder & CEO
+</p>
+
+</div>
+
+<div class="founder-text glass">
+
+<div class="label" data-i="meetFounder">
+Meet The Founder
+</div>
+
+<h2 class="title" data-i="founderTitle">
+Building Algorithm Pulse
+for the next generation.
+</h2>
+
+<p data-i="founderP1">
+Algorithm Pulse was created with the vision of bringing modern technology,
+creative design and digital strategy together under one platform.
+</p>
+
+<p data-i="founderP2">
+Our goal is simple: help businesses create a stronger digital identity
+and turn ideas into professional digital experiences.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section class="section" id="services">
+
+<div class="container">
+
+<div class="label" data-i="servicesLabel">
+Our Services
+</div>
+
+<h2 class="title" data-i="servicesTitle">
+Everything your brand needs online.
+</h2>
+
+<p class="subtitle" data-i="servicesDesc">
+From your first website to advanced digital solutions, Algorithm Pulse
+helps build the complete digital foundation of your brand.
+</p>
+
+<div class="grid-3">
+
+<div class="service glass">
+<div class="icon">🌐</div>
+<h3 data-i="s1">Business Websites</h3>
+<p data-i="s1p">
+Professional responsive websites designed around your business, customers and goals.
+</p>
+</div>
+
+<div class="service glass">
+<div class="icon">📱</div>
+<h3 data-i="s2">Social Media Management</h3>
+<p data-i="s2p">
+Content planning, creative posts and social media management for consistent digital growth.
+</p>
+</div>
+
+<div class="service glass">
+<div class="icon">🎨</div>
+<h3 data-i="s3">Branding & Design</h3>
+<p data-i="s3p">
+Logos, posters, visual identity and digital creatives that make your brand recognizable.
+</p>
+</div>
+
+<div class="service glass">
+<div class="icon">🎬</div>
+<h3 data-i="s4">Video Editing</h3>
+<p data-i="s4p">
+Professional short-form content, reels and promotional videos for digital platforms.
+</p>
+</div>
+
+<div class="service glass">
+<div class="icon">🤖</div>
+<h3 data-i="s5">AI Solutions</h3>
+<p data-i="s5p">
+Custom intelligent experiences and AI-powered systems for modern businesses.
+</p>
+</div>
+
+<div class="service glass">
+<div class="icon">📈</div>
+<h3 data-i="s6">Digital Growth</h3>
+<p data-i="s6p">
+Digital strategies designed to improve visibility, engagement and customer reach.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PORTFOLIO -->
+
+<section class="section" id="portfolio">
+
+<div class="container">
+
+<div class="label" data-i="portfolioLabel">
+Selected Work
+</div>
+
+<h2 class="title" data-i="portfolioTitle">
+Built to look different.
+</h2>
+
+<p class="subtitle" data-i="portfolioDesc">
+Our portfolio showcases websites, brands, campaigns and digital systems
+created by Algorithm Pulse.
+</p>
+
+<div class="grid-3">
+
+<div class="project glass">
+
+<div class="project-art">
+
+<div>
+
+<h3>Algorithm Pulse</h3>
+
+<p data-i="p1">
+Digital Innovation Platform
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="project glass">
+
+<div class="project-art">
+
+<div>
+
+<h3 data-i="p2title">
+Business Website
+</h3>
+
+<p data-i="p2">
+Premium Corporate Experience
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="project glass">
+
+<div class="project-art">
+
+<div>
+
+<h3 data-i="p3title">
+Brand Identity
+</h3>
+
+<p data-i="p3">
+Creative Digital Branding
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- WHY -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="label" data-i="whyLabel">
+Why Algorithm Pulse
+</div>
+
+<h2 class="title" data-i="whyTitle">
+More than a website.
+</h2>
+
+<div class="why">
+
+<div class="why-card glass">
+<h3 data-i="w1">⚡ Modern Technology</h3>
+<p data-i="w1p">
+We use modern development approaches to create fast and scalable digital experiences.
+</p>
+</div>
+
+<div class="why-card glass">
+<h3 data-i="w2">🎯 Custom Strategy</h3>
+<p data-i="w2p">
+Every project is designed around the client's goals instead of using one fixed template.
+</p>
+</div>
+
+<div class="why-card glass">
+<h3 data-i="w3">💎 Premium Design</h3>
+<p data-i="w3p">
+Our focus is on creating digital products that look professional and memorable.
+</p>
+</div>
+
+<div class="why-card glass">
+<h3 data-i="w4">🚀 Future Ready</h3>
+<p data-i="w4p">
+Our systems can evolve as your business grows and new technology becomes available.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PRICING -->
+
+<section class="section" id="pricing">
+
+<div class="container">
+
+<div class="label" data-i="pricingLabel">
+Starting Pricing
+</div>
+
+<h2 class="title" data-i="pricingTitle">
+Choose your starting point.
+</h2>
+
+<p class="subtitle" data-i="pricingDesc">
+Final pricing depends on project requirements, features and scope.
+</p>
+
+<div class="grid-3">
+
+<div class="price-card glass">
+
+<h3 data-i="price1">
+Business Website
+</h3>
+
+<div class="price">
+₹10,000
+<small data-i="starting">starting</small>
+</div>
+
+<ul class="features">
+
+<li data-i="f11">Professional website</li>
+<li data-i="f12">Responsive design</li>
+<li data-i="f13">Business pages</li>
+<li data-i="f14">Contact integration</li>
+<li data-i="f15">Basic SEO structure</li>
+
+</ul>
+
+<a href="#contact"
+class="btn secondary"
+style="width:100%"
+data-i="getStarted">
+Get Started
+</a>
+
+</div>
+
+<div class="price-card glass featured">
+
+<div class="popular" data-i="popular">
+POPULAR
+</div>
+
+<h3 data-i="price2">
+Social Media
+</h3>
+
+<div class="price">
+₹5,000
+<small data-i="monthly">
+/ month starting
+</small>
+</div>
+
+<ul class="features">
+
+<li data-i="f21">Social media management</li>
+<li data-i="f22">Content planning</li>
+<li data-i="f23">Creative posts</li>
+<li data-i="f24">Brand strategy</li>
+<li data-i="f25">Monthly management</li>
+
+</ul>
+
+<a href="#contact"
+class="btn primary"
+style="width:100%"
+data-i="getStarted2">
+Get Started
+</a>
+
+</div>
+
+<div class="price-card glass">
+
+<h3 data-i="price3">
+Premium Custom
+</h3>
+
+<div class="price">
+₹1,00,000+
+<small data-i="custom">
+custom
+</small>
+</div>
+
+<ul class="features">
+
+<li data-i="f31">Advanced websites</li>
+<li data-i="f32">Custom functionality</li>
+<li data-i="f33">AI integrations</li>
+<li data-i="f34">Business systems</li>
+<li data-i="f35">Dedicated development</li>
+
+</ul>
+
+<a href="#contact"
+class="btn secondary"
+style="width:100%"
+data-i="discuss">
+Discuss Project
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- HOW IT WORKS -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="label" data-i="howLabel">
+How It Works
+</div>
+
+<h2 class="title" data-i="howTitle">
+From idea to delivery.
+</h2>
+
+<div class="steps">
+
+<div class="step glass">
+
+<div class="step-num">01</div>
+
+<h3 data-i="step1">
+Requirement
+</h3>
+
+<p data-i="step1p">
+We understand your project, goals and required features.
+</p>
+
+</div>
+
+<div class="step glass">
+
+<div class="step-num">02</div>
+
+<h3 data-i="step2">
+Quotation & Agreement
+</h3>
+
+<p data-i="step2p">
+Scope, pricing, timeline and terms are confirmed in writing.
+</p>
+
+</div>
+
+<div class="step glass">
+
+<div class="step-num">03</div>
+
+<h3 data-i="step3">
+Advance & Development
+</h3>
+
+<p data-i="step3p">
+Work begins after the agreed advance and required materials are received.
+</p>
+
+</div>
+
+<div class="step glass">
+
+<div class="step-num">04</div>
+
+<h3 data-i="step4">
+Review & Delivery
+</h3>
+
+<p data-i="step4p">
+After review and agreed revisions, the final project is delivered.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CLIENT SYSTEM -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="label" data-i="clientLabel">
+Client System
+</div>
+
+<h2 class="title" data-i="clientTitle">
+Clear scope. Clear payment. Clear delivery.
+</h2>
+
+<div class="client-grid">
+
+<div class="client-card glass">
+
+<h3 data-i="quoteTitle">
+📄 Quotation / Estimate
+</h3>
+
+<ul>
+
+<li data-i="q1">Project scope</li>
+<li data-i="q2">Included features</li>
+<li data-i="q3">Timeline</li>
+<li data-i="q4">Total project price</li>
+<li data-i="q5">Payment schedule</li>
+
+</ul>
+
+</div>
+
+<div class="client-card glass">
+
+<h3 data-i="paymentTitle">
+💳 Advance & Milestones
+</h3>
+
+<p data-i="paymentP">
+Payment terms will be agreed in the quotation. An advance may be required
+before development begins, with remaining payments linked to agreed milestones
+or final delivery.
+</p>
+
+</div>
+
+<div class="client-card glass">
+
+<h3 data-i="scopeTitle">
+📋 Project Scope
+</h3>
+
+<p data-i="scopeP">
+Only the features and services specifically included in the approved quotation
+are part of the project. Additional requirements may be separately quoted.
+</p>
+
+</div>
+
+<div class="client-card glass">
+
+<h3 data-i="thirdTitle">
+🔌 Domain, Hosting & APIs
+</h3>
+
+<p data-i="thirdP">
+Domain, hosting, paid APIs, plugins and other third-party services are separate
+unless explicitly included in the approved quotation.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- SANIA -->
+
+<section class="section" id="sania">
+
+<div class="container">
+
+<div class="sania glass">
+
+<div>
+
+<div class="label" data-i="aiLabel">
+Algorithm Pulse Intelligence
+</div>
+
+<h2 class="sania-title">
+Meet <span class="gradient">Sania AI.</span>
+</h2>
+
+<p class="sania-description" data-i="aiDesc">
+Your digital assistant for Algorithm Pulse. Ask about our services,
+pricing, founder or project requirements.
+</p>
+
+</div>
+
+<div class="chat">
+
+<div class="chat-head">
+
+<div class="sania-icon">
+✦
+</div>
+
+<div>
+
+<strong>Sania AI</strong>
+
+<br>
+
+<small style="color:#777">
+
+<span data-i="online">
+Online
+</span>
+
+<span class="online"></span>
+
+</small>
+
+</div>
+
+</div>
+
+<div class="messages" id="messages">
+
+<div class="message" id="welcomeMessage">
+Radhey Radhey 🙏 I'm Sania AI. Welcome to Algorithm Pulse! How can I help you today?
+</div>
+
+</div>
+
+<div class="chat-input">
+
+<input
+id="saniaInput"
+type="text"
+placeholder="Ask Sania..."
+autocomplete="off">
+
+<button id="sendButton" onclick="sendMessage()">
+→
+</button>
+
+</div>
+
+<div class="voice-controls">
+
+<button class="voice-btn"
+onclick="startVoice()"
+data-i="voice">
+🎤 Voice Input
+</button>
+
+<button class="voice-btn"
+onclick="stopSpeaking()"
+data-i="stopVoice">
+🔇 Stop Voice
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="section" id="contact">
+
+<div class="container">
+
+<div class="label" data-i="contactLabel">
+Contact Algorithm Pulse
+</div>
+
+<h2 class="title" data-i="contactTitle">
+Let's build your next digital experience.
+</h2>
+
+<p class="subtitle" data-i="contactDesc">
+Send your requirements and we'll discuss your project.
+</p>
+
+<div class="contact">
+
+<div class="contact-card glass">
+
+<h2 data-i="talk">
+Let's Talk.
+</h2>
+
+<p data-i="talkP">
+Whether you need a website, social media management, branding
+or a custom digital solution, tell us what you're building.
+</p>
+
+<div class="contact-item">
+📧 helloalgorithmpulse@gmail.com
+</div>
+
+<div class="contact-item">
+🌍 <span data-i="global">
+Available for global projects
+</span>
+</div>
+
+<div class="contact-item">
+🤖 Sania AI support
+</div>
+
+</div>
+
+<div class="contact-card glass">
+
+<form id="contactForm">
+
+<div class="form-group">
+
+<label data-i="nameLabel">
+Your Name
+</label>
+
+<input
+id="name"
+type="text"
+placeholder="Enter your name"
+required>
+
+</div>
+
+<div class="form-group">
+
+<label data-i="emailLabel">
+Email
+</label>
+
+<input
+id="email"
+type="email"
+placeholder="you@example.com"
+required>
+
+</div>
+
+<div class="form-group">
+
+<label data-i="requirementLabel">
+Project Requirement
+</label>
+
+<textarea
+id="requirement"
+placeholder="Tell us about your project..."
+required></textarea>
+
+</div>
+
+<button
+class="btn primary"
+type="submit"
+style="width:100%"
+data-i="sendEnquiry">
+Send Enquiry →
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= LEGAL / TERMS ================= -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="label" data-i="legalLabel">
+Legal & Policies
+</div>
+
+<h2 class="title" data-i="legalTitle">
+Clear terms. Professional work.
+</h2>
+
+<div class="legal-grid">
+
+<div class="legal glass">
+
+<h3 data-i="termsTitle">
+Terms & Conditions
+</h3>
+
+<p data-i="termsShort">
+Project scope, payment terms, revisions, delivery and client responsibilities.
+</p>
+
+<a href="#"
+onclick="openLegal('terms');return false"
+data-i="readTerms">
+Read Terms →
+</a>
+
+</div>
+
+<div class="legal glass">
+
+<h3 data-i="privacyTitle">
+Privacy Policy
+</h3>
+
+<p data-i="privacyShort">
+Information about how website enquiries and customer information are handled.
+</p>
+
+<a href="#"
+onclick="openLegal('privacy');return false"
+data-i="readPrivacy">
+Read Privacy →
+</a>
+
+</div>
+
+<div class="legal glass">
+
+<h3 data-i="refundTitle">
+Cancellation & Refund
+</h3>
+
+<p data-i="refundShort">
+Rules covering cancellations, advance payments and project refunds.
+</p>
+
+<a href="#"
+onclick="openLegal('refund');return false"
+data-i="readRefund">
+Read Policy →
+</a>
+
+</div>
+
+<div class="legal glass">
+
+<h3 data-i="maintenanceTitle">
+Maintenance Policy
+</h3>
+
+<p data-i="maintenanceShort">
+Future updates, maintenance and additional features are handled separately unless agreed.
+</p>
+
+<a href="#"
+onclick="openLegal('maintenance');return false"
+data-i="readMaintenance">
+Read Policy →
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CTA -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="cta">
+
+<h2 data-i="ctaTitle">
+Ready to build something <span class="gradient">great?</span>
+</h2>
+
+<p data-i="ctaP">
+Tell us about your idea and let's turn it into a professional digital experience.
+</p>
+
+<a href="#contact"
+class="btn primary"
+data-i="ctaButton">
+Start Your Project →
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<div class="container footer">
+
+<div>
+
+<a href="#home" class="logo">
+
+<span class="logo-box">
+AP
+</span>
+
+<span>
+
+<span class="logo-word">
+Algorithm
+</span>
+
+<span> </span>
+
+<span class="logo-word">
+Pulse
+</span>
+
+</span>
+
+</a>
+
+<div class="footer-copy">
+© 2026 Algorithm Pulse. All rights reserved.
+</div>
+
+<div class="footer-copy">
+
+<span class="name-word">
+Aaditya
+</span>
+
+<span class="name-word">
+Tiwari
+</span>
+
+— Founder & CEO
+
+</div>
+
+<div class="footer-copy">
+Built by Algorithm Pulse
+</div>
+
+</div>
+
+<div class="footer-links">
+
+<a href="#"
+onclick="openLegal('terms');return false"
+data-i="footerTerms">
+Terms
+</a>
+
+<a href="#"
+onclick="openLegal('privacy');return false"
+data-i="footerPrivacy">
+Privacy
+</a>
+
+<a href="#"
+onclick="openLegal('refund');return false"
+data-i="footerRefund">
+Cancellation
+</a>
+
+<a href="#"
+onclick="openLegal('maintenance');return false"
+data-i="footerMaintenance">
+Maintenance
+</a>
+
+<a href="mailto:helloalgorithmpulse@gmail.com">
+Email
+</a>
+
+</div>
+
+</div>
+
+</footer>
+
+<!-- SANIA FLOAT -->
+
+<div class="sania-float">
+
+<button class="sania-btn" onclick="focusSania()">
+✦ <span>Sania AI</span> — Ask us
+</button>
+
+</div>
+
+<!-- LEGAL MODAL -->
+
+<div class="modal" id="legalModal">
+
+<div class="modal-box glass">
+
+<button class="close" onclick="closeLegal()">
+×
+</button>
+
+<h2 id="legalTitleModal"></h2>
+
+<p id="legalContent"></p>
+
+</div>
+
+</div>
+
+<script>
+
+/* ================= LANGUAGE DATA ================= */
+
+const translations={
+
+en:{
+
+home:"Home",
+about:"About",
+services:"Services",
+portfolio:"Portfolio",
+pricing:"Pricing",
+sania:"Sania AI",
+contact:"Contact",
+
+heroLabel:"Digital Innovation Studio",
+
+heroTitle:
+"We Build <span class='gradient'>Digital Experiences</span> That Move Brands.",
+
+heroDesc:
+"Algorithm Pulse creates premium websites, branding, social media experiences and intelligent digital solutions for modern businesses.",
+
+startProject:"Start a Project →",
+explore:"Explore Services",
+
+founderSmall:"Founder & CEO",
+
+aboutLabel:"About Algorithm Pulse",
+
+aboutTitle:
+"Technology with creativity.<br>Strategy with purpose.",
+
+aboutDesc:
+"Algorithm Pulse is a digital innovation brand focused on creating professional, modern and scalable digital experiences for businesses and creators.",
+
+stat1:"Digital Presence",
+stat2:"Core Services",
+stat3:"Custom Approach",
+stat4:"Future Ready",
+
+ceo:"Founder & CEO",
+meetFounder:"Meet The Founder",
+
+founderTitle:
+"Building Algorithm Pulse for the next generation.",
+
+founderP1:
+"Algorithm Pulse was created with the vision of bringing modern technology, creative design and digital strategy together under one platform.",
+
+founderP2:
+"Our goal is simple: help businesses create a stronger digital identity and turn ideas into professional digital experiences.",
+
+servicesLabel:"Our Services",
+
+servicesTitle:
+"Everything your brand needs online.",
+
+servicesDesc:
+"From your first website to advanced digital solutions, Algorithm Pulse helps build the complete digital foundation of your brand.",
+
+s1:"Business Websites",
+s1p:"Professional responsive websites designed around your business, customers and goals.",
+
+s2:"Social Media Management",
+s2p:"Content planning, creative posts and social media management for consistent digital growth.",
+
+s3:"Branding & Design",
+s3p:"Logos, posters, visual identity and digital creatives that make your brand recognizable.",
+
+s4:"Video Editing",
+s4p:"Professional short-form content, reels and promotional videos for digital platforms.",
+
+s5:"AI Solutions",
+s5p:"Custom intelligent experiences and AI-powered systems for modern businesses.",
+
+s6:"Digital Growth",
+s6p:"Digital strategies designed to improve visibility, engagement and customer reach.",
+
+portfolioLabel:"Selected Work",
+portfolioTitle:"Built to look different.",
+
+portfolioDesc:
+"Our portfolio showcases websites, brands, campaigns and digital systems created by Algorithm Pulse.",
+
+p1:"Digital Innovation Platform",
+p2title:"Business Website",
+p2:"Premium Corporate Experience",
+p3title:"Brand Identity",
+p3:"Creative Digital Branding",
+
+whyLabel:"Why Algorithm Pulse",
+whyTitle:"More than a website.",
+
+w1:"⚡ Modern Technology",
+w1p:"We use modern development approaches to create fast and scalable digital experiences.",
+
+w2:"🎯 Custom Strategy",
+w2p:"Every project is designed around the client's goals instead of using one fixed template.",
+
+w3:"💎 Premium Design",
+w3p:"Our focus is on creating digital products that look professional and memorable.",
+
+w4:"🚀 Future Ready",
+w4p:"Our systems can evolve as your business grows and new technology becomes available.",
+
+pricingLabel:"Starting Pricing",
+pricingTitle:"Choose your starting point.",
+
+pricingDesc:
+"Final pricing depends on project requirements, features and scope.",
+
+price1:"Business Website",
+starting:"starting",
+
+price2:"Social Media",
+monthly:"/ month starting",
+
+price3:"Premium Custom",
+custom:"custom",
+
+popular:"POPULAR",
+
+getStarted:"Get Started",
+getStarted2:"Get Started",
+discuss:"Discuss Project",
+
+f11:"Professional website",
+f12:"Responsive design",
+f13:"Business pages",
+f14:"Contact integration",
+f15:"Basic SEO structure",
+
+f21:"Social media management",
+f22:"Content planning",
+f23:"Creative posts",
+f24:"Brand strategy",
+f25:"Monthly management",
+
+f31:"Advanced websites",
+f32:"Custom functionality",
+f33:"AI integrations",
+f34:"Business systems",
+f35:"Dedicated development",
+
+howLabel:"How It Works",
+howTitle:"From idea to delivery.",
+
+step1:"Requirement",
+step1p:"We understand your project, goals and required features.",
+
+step2:"Quotation & Agreement",
+step2p:"Scope, pricing, timeline and terms are confirmed in writing.",
+
+step3:"Advance & Development",
+step3p:"Work begins after the agreed advance and required materials are received.",
+
+step4:"Review & Delivery",
+step4p:"After review and agreed revisions, the final project is delivered.",
+
+clientLabel:"Client System",
+
+clientTitle:
+"Clear scope. Clear payment. Clear delivery.",
+
+quoteTitle:"📄 Quotation / Estimate",
+
+q1:"Project scope",
+q2:"Included features",
+q3:"Timeline",
+q4:"Total project price",
+q5:"Payment schedule",
+
+paymentTitle:"💳 Advance & Milestones",
+
+paymentP:
+"Payment terms will be agreed in the quotation. An advance may be required before development begins, with remaining payments linked to agreed milestones or final delivery.",
+
+scopeTitle:"📋 Project Scope",
+
+scopeP:
+"Only the features and services specifically included in the approved quotation are part of the project. Additional requirements may be separately quoted.",
+
+thirdTitle:"🔌 Domain, Hosting & APIs",
+
+thirdP:
+"Domain, hosting, paid APIs, plugins and other third-party services are separate unless explicitly included in the approved quotation.",
+
+aiLabel:"Algorithm Pulse Intelligence",
+
+aiDesc:
+"Your digital assistant for Algorithm Pulse. Ask about our services, pricing, founder or project requirements.",
+
+online:"Online",
+
+voice:"🎤 Voice Input",
+stopVoice:"🔇 Stop Voice",
+
+contactLabel:"Contact Algorithm Pulse",
+
+contactTitle:
+"Let's build your next digital experience.",
+
+contactDesc:
+"Send your requirements and we'll discuss your project.",
+
+talk:"Let's Talk.",
+
+talkP:
+"Whether you need a website, social media management, branding or a custom digital solution, tell us what you're building.",
+
+global:"Available for global projects",
+
+nameLabel:"Your Name",
+emailLabel:"Email",
+requirementLabel:"Project Requirement",
+
+sendEnquiry:"Send Enquiry →",
+
+legalLabel:"Legal & Policies",
+
+legalTitle:
+"Clear terms. Professional work.",
+
+termsTitle:"Terms & Conditions",
+
+termsShort:
+"Project scope, payment terms, revisions, delivery and client responsibilities.",
+
+readTerms:"Read Terms →",
+
+privacyTitle:"Privacy Policy",
+
+privacyShort:
+"Information about how website enquiries and customer information are handled.",
+
+readPrivacy:"Read Privacy →",
+
+refundTitle:"Cancellation & Refund",
+
+refundShort:
+"Rules covering cancellations, advance payments and project refunds.",
+
+readRefund:"Read Policy →",
+
+maintenanceTitle:"Maintenance Policy",
+
+maintenanceShort:
+"Future updates, maintenance and additional features are handled separately unless agreed.",
+
+readMaintenance:"Read Policy →",
+
+ctaTitle:
+"Ready to build something <span class='gradient'>great?</span>",
+
+ctaP:
+"Tell us about your idea and let's turn it into a professional digital experience.",
+
+ctaButton:"Start Your Project →",
+
+footerTerms:"Terms",
+footerPrivacy:"Privacy",
+footerRefund:"Cancellation",
+footerMaintenance:"Maintenance"
+
+},
+
+hi:{
+
+home:"होम",
+about:"हमारे बारे में",
+services:"सेवाएँ",
+portfolio:"पोर्टफोलियो",
+pricing:"प्राइसिंग",
+sania:"सैनिया AI",
+contact:"संपर्क",
+
+heroLabel:"डिजिटल इनोवेशन स्टूडियो",
+
+heroTitle:
+"हम बनाते हैं <span class='gradient'>डिजिटल अनुभव</span> जो ब्रांड को आगे बढ़ाएँ।",
+
+heroDesc:
+"Algorithm Pulse आधुनिक व्यवसायों के लिए प्रीमियम वेबसाइट, ब्रांडिंग, सोशल मीडिया अनुभव और स्मार्ट डिजिटल समाधान बनाता है।",
+
+startProject:"प्रोजेक्ट शुरू करें →",
+explore:"सेवाएँ देखें",
+
+founderSmall:"संस्थापक और CEO",
+
+aboutLabel:"Algorithm Pulse के बारे में",
+
+aboutTitle:
+"क्रिएटिविटी के साथ टेक्नोलॉजी।<br>उद्देश्य के साथ रणनीति।",
+
+aboutDesc:
+"Algorithm Pulse एक डिजिटल इनोवेशन ब्रांड है जो व्यवसायों और क्रिएटर्स के लिए प्रोफेशनल, आधुनिक और स्केलेबल डिजिटल अनुभव बनाता है।",
+
+stat1:"डिजिटल उपस्थिति",
+stat2:"मुख्य सेवाएँ",
+stat3:"कस्टम अप्रोच",
+stat4:"भविष्य के लिए तैयार",
+
+ceo:"संस्थापक और CEO",
+meetFounder:"संस्थापक से मिलें",
+
+founderTitle:
+"अगली पीढ़ी के लिए Algorithm Pulse का निर्माण।",
+
+founderP1:
+"Algorithm Pulse की शुरुआत आधुनिक टेक्नोलॉजी, क्रिएटिव डिज़ाइन और डिजिटल रणनीति को एक प्लेटफॉर्म पर लाने के उद्देश्य से हुई।",
+
+founderP2:
+"हमारा लक्ष्य सरल है: व्यवसायों को मजबूत डिजिटल पहचान बनाने और विचारों को प्रोफेशनल डिजिटल अनुभव में बदलने में मदद करना।",
+
+servicesLabel:"हमारी सेवाएँ",
+
+servicesTitle:
+"आपके ब्रांड को ऑनलाइन जो कुछ चाहिए।",
+
+servicesDesc:
+"पहली वेबसाइट से लेकर एडवांस डिजिटल समाधान तक, Algorithm Pulse आपके ब्रांड की पूरी डिजिटल नींव तैयार करने में मदद करता है।",
+
+s1:"बिजनेस वेबसाइट",
+s1p:"आपके व्यवसाय, ग्राहकों और लक्ष्यों के अनुसार प्रोफेशनल responsive वेबसाइट।",
+
+s2:"सोशल मीडिया मैनेजमेंट",
+s2p:"लगातार डिजिटल ग्रोथ के लिए कंटेंट प्लानिंग, क्रिएटिव पोस्ट और सोशल मीडिया मैनेजमेंट।",
+
+s3:"ब्रांडिंग और डिज़ाइन",
+s3p:"लोगो, पोस्टर, विजुअल आइडेंटिटी और डिजिटल क्रिएटिव्स।",
+
+s4:"वीडियो एडिटिंग",
+s4p:"डिजिटल प्लेटफॉर्म के लिए शॉर्ट वीडियो, रील्स और प्रमोशनल वीडियो।",
+
+s5:"AI समाधान",
+s5p:"आधुनिक व्यवसायों के लिए कस्टम AI अनुभव और AI-powered systems।",
+
+s6:"डिजिटल ग्रोथ",
+s6p:"विजिबिलिटी, एंगेजमेंट और ग्राहक पहुंच बढ़ाने की डिजिटल रणनीतियाँ।",
+
+portfolioLabel:"चयनित काम",
+
+portfolioTitle:
+"दिखने में अलग।",
+
+portfolioDesc:
+"हमारा पोर्टफोलियो Algorithm Pulse द्वारा बनाए गए वेबसाइट, ब्रांड और डिजिटल सिस्टम दिखाता है।",
+
+p1:"डिजिटल इनोवेशन प्लेटफॉर्म",
+p2title:"बिजनेस वेबसाइट",
+p2:"प्रीमियम कॉर्पोरेट अनुभव",
+p3title:"ब्रांड आइडेंटिटी",
+p3:"क्रिएटिव डिजिटल ब्रांडिंग",
+
+whyLabel:"Algorithm Pulse क्यों",
+
+whyTitle:
+"सिर्फ एक वेबसाइट से ज्यादा।",
+
+w1:"⚡ आधुनिक टेक्नोलॉजी",
+w1p:"तेज और scalable डिजिटल अनुभव बनाने के लिए आधुनिक development approaches का उपयोग।",
+
+w2:"🎯 कस्टम रणनीति",
+w2p:"हर प्रोजेक्ट ग्राहक के लक्ष्यों के अनुसार तैयार किया जाता है।",
+
+w3:"💎 प्रीमियम डिज़ाइन",
+w3p:"प्रोफेशनल और याद रहने वाले डिजिटल प्रोडक्ट बनाना हमारा फोकस है।",
+
+w4:"🚀 भविष्य के लिए तैयार",
+w4p:"बिजनेस बढ़ने के साथ हमारे सिस्टम भी विकसित हो सकते हैं।",
+
+pricingLabel:"शुरुआती प्राइसिंग",
+
+pricingTitle:
+"अपना विकल्प चुनें।",
+
+pricingDesc:
+"अंतिम कीमत प्रोजेक्ट की जरूरत, फीचर्स और scope पर निर्भर करेगी।",
+
+price1:"बिजनेस वेबसाइट",
+starting:"शुरुआत",
+
+price2:"सोशल मीडिया",
+monthly:"/ महीने से",
+
+price3:"प्रीमियम कस्टम",
+custom:"कस्टम",
+
+popular:"लोकप्रिय",
+
+getStarted:"शुरू करें",
+getStarted2:"शुरू करें",
+discuss:"प्रोजेक्ट पर चर्चा करें",
+
+f11:"प्रोफेशनल वेबसाइट",
+f12:"Responsive design",
+f13:"बिजनेस पेज",
+f14:"Contact integration",
+f15:"Basic SEO structure",
+
+f21:"सोशल मीडिया मैनेजमेंट",
+f22:"कंटेंट प्लानिंग",
+f23:"क्रिएटिव पोस्ट",
+f24:"ब्रांड स्ट्रेटेजी",
+f25:"मासिक मैनेजमेंट",
+
+f31:"एडवांस वेबसाइट",
+f32:"कस्टम फंक्शनैलिटी",
+f33:"AI इंटीग्रेशन",
+f34:"बिजनेस सिस्टम",
+f35:"Dedicated development",
+
+howLabel:"कैसे काम करता है",
+
+howTitle:
+"आइडिया से डिलीवरी तक।",
+
+step1:"जरूरत",
+step1p:"हम आपके प्रोजेक्ट, लक्ष्यों और जरूरी फीचर्स को समझते हैं।",
+
+step2:"कोटेशन और एग्रीमेंट",
+step2p:"Scope, pricing, timeline और terms लिखित रूप में तय किए जाते हैं।",
+
+step3:"एडवांस और डेवलपमेंट",
+step3p:"सहमत advance और जरूरी सामग्री मिलने के बाद काम शुरू होता है।",
+
+step4:"रिव्यू और डिलीवरी",
+step4p:"रिव्यू और agreed revisions के बाद final project दिया जाता है।",
+
+clientLabel:"क्लाइंट सिस्टम",
+
+clientTitle:
+"स्पष्ट scope। स्पष्ट payment। स्पष्ट delivery।",
+
+quoteTitle:"📄 कोटेशन / अनुमान",
+
+q1:"प्रोजेक्ट scope",
+q2:"शामिल फीचर्स",
+q3:"टाइमलाइन",
+q4:"कुल प्रोजेक्ट कीमत",
+q5:"पेमेंट शेड्यूल",
+
+paymentTitle:"💳 एडवांस और माइलस्टोन",
+
+paymentP:
+"पेमेंट की शर्तें quotation में तय होंगी। डेवलपमेंट शुरू होने से पहले advance लिया जा सकता है और बाकी payment agreed milestones या final delivery से जुड़ी होगी।",
+
+scopeTitle:"📋 प्रोजेक्ट Scope",
+
+scopeP:
+"Approved quotation में शामिल services और features ही project का हिस्सा होंगे। अतिरिक्त requirements के लिए अलग quotation दिया जा सकता है।",
+
+thirdTitle:"🔌 Domain, Hosting और APIs",
+
+thirdP:
+"Domain, hosting, paid APIs, plugins और अन्य third-party services अलग होंगे, जब तक quotation में स्पष्ट रूप से शामिल न हों।",
+
+aiLabel:"Algorithm Pulse Intelligence",
+
+aiDesc:
+"Algorithm Pulse के लिए आपका digital assistant। Services, pricing, founder या project requirements के बारे में पूछें।",
+
+online:"ऑनलाइन",
+
+voice:"🎤 Voice Input",
+stopVoice:"🔇 Voice बंद करें",
+
+contactLabel:"Algorithm Pulse से संपर्क",
+
+contactTitle:
+"अपना अगला डिजिटल अनुभव बनाते हैं।",
+
+contactDesc:
+"अपनी requirements भेजें और अपने project पर चर्चा करें।",
+
+talk:"बात करते हैं।",
+
+talkP:
+"Website, social media management, branding या custom digital solution चाहिए तो अपने project के बारे में बताएं।",
+
+global:"Global projects के लिए उपलब्ध",
+
+nameLabel:"आपका नाम",
+emailLabel:"ईमेल",
+requirementLabel:"प्रोजेक्ट की जरूरत",
+
+sendEnquiry:"Enquiry भेजें →",
+
+legalLabel:"Legal और Policies",
+
+legalTitle:
+"स्पष्ट terms। प्रोफेशनल काम।",
+
+termsTitle:"Terms & Conditions",
+
+termsShort:
+"Project scope, payment, revisions, delivery और client responsibilities।",
+
+readTerms:"Terms पढ़ें →",
+
+privacyTitle:"Privacy Policy",
+
+privacyShort:
+"Website enquiries और customer information को कैसे handle किया जाता है।",
+
+readPrivacy:"Privacy पढ़ें →",
+
+refundTitle:"Cancellation & Refund",
+
+refundShort:
+"Cancellation, advance payment और refund से जुड़े नियम।",
+
+readRefund:"Policy पढ़ें →",
+
+maintenanceTitle:"Maintenance Policy",
+
+maintenanceShort:
+"Future updates, maintenance और additional features अलग service होंगे, जब तक agreement में कुछ और न हो।",
+
+readMaintenance:"Policy पढ़ें →",
+
+ctaTitle:
+"कुछ <span class='gradient'>शानदार</span> बनाने के लिए तैयार?",
+
+ctaP:
+"अपना idea बताएं और उसे professional digital experience में बदलते हैं।",
+
+ctaButton:"अपना प्रोजेक्ट शुरू करें →",
+
+footerTerms:"Terms",
+footerPrivacy:"Privacy",
+footerRefund:"Cancellation",
+footerMaintenance:"Maintenance"
+
+}
+
+};
+
+let currentLanguage="en";
+
+/* ================= LANGUAGE SWITCH ================= */
+
+function setLanguage(lang){
+
+currentLanguage=lang;
+
+const data=translations[lang];
+
+document
+.querySelectorAll("[data-i]")
+.forEach(el=>{
+
+const key=el.getAttribute("data-i");
+
+if(data[key]){
+el.innerHTML=data[key];
+}
+
+});
+
+document.documentElement.lang=lang;
+
+document.getElementById("langCurrent").textContent=
+lang==="hi"?"HI":"EN";
+
+document.getElementById("langMenu")
+.classList.remove("active");
+
+const welcome=
+document.getElementById("welcomeMessage");
+
+if(lang==="hi"){
+
+welcome.textContent=
+"राधे राधे 🙏 मैं Sania AI हूँ। Algorithm Pulse में आपका स्वागत है! मैं आपकी कैसे मदद कर सकती हूँ?";
+
+document.getElementById("saniaInput").placeholder=
+"सैनिया से पूछें...";
+
+}else{
+
+welcome.textContent=
+"Radhey Radhey 🙏 I'm Sania AI. Welcome to Algorithm Pulse! How can I help you today?";
+
+document.getElementById("saniaInput").placeholder=
+"Ask Sania...";
+
+}
+
+try{
+localStorage.setItem(
+"algorithmPulseLanguage",
+lang
+);
+}catch(e){}
+
+}
+
+/* LANGUAGE MENU */
+
+function toggleLanguageMenu(){
+
+document
+.getElementById("langMenu")
+.classList.toggle("active");
+
+}
+
+document.addEventListener("click",function(e){
+
+const wrap=
+document.querySelector(".lang-wrap");
+
+if(wrap && !wrap.contains(e.target)){
+
+document
+.getElementById("langMenu")
+.classList.remove("active");
+
+}
+
+});
+
+/* ================= MOBILE MENU ================= */
+
+function toggleMenu(){
+
+document
+.getElementById("navLinks")
+.classList.toggle("active");
+
+}
+
+document.querySelectorAll(".nav-links a")
+.forEach(link=>{
+
+link.addEventListener("click",()=>{
+
+document
+.getElementById("navLinks")
+.classList.remove("active");
+
+});
+
+});
+
+/* ================= SANIA ================= */
+
+const input=
+document.getElementById("saniaInput");
+
+const messages=
+document.getElementById("messages");
+
+const sendButton=
+document.getElementById("sendButton");
+
+function addMessage(text,type="bot"){
+
+const div=
+document.createElement("div");
+
+div.className=
+"message "+(type==="user"?"user":"");
+
+div.textContent=text;
+
+messages.appendChild(div);
+
+messages.scrollTop=
+messages.scrollHeight;
+
+return div;
+
+}
+
+async function sendMessage(){
+
+const text=
+input.value.trim();
+
+if(!text)return;
+
+addMessage(text,"user");
+
+input.value="";
+
+sendButton.disabled=true;
+
+const loading=
+addMessage(
+currentLanguage==="hi"
+?"सैनिया सोच रही है..."
+:"Sania is thinking...",
+"bot"
+);
+
+try{
+
+const response=
+await fetch("/chat",{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+
+message:
+(currentLanguage==="hi"
+?"Please reply in Hindi. "
+:"Please reply in English. ")+text
+
+})
+
+});
+
+if(!response.ok)
+throw new Error("Server error");
+
+const data=
+await response.json();
+
+loading.remove();
+
+const reply=
+data.reply||
+(currentLanguage==="hi"
+?"राधे राधे 🙏 अभी जवाब नहीं मिल पाया।"
+:"Radhey Radhey 🙏 I couldn't generate a response right now.");
+
+addMessage(reply,"bot");
+
+speak(reply);
+
+}catch(error){
+
+loading.remove();
+
+addMessage(
+
+currentLanguage==="hi"
+
+?
+
+"राधे राधे 🙏 Sania अभी server से connect नहीं हो पा रही है। कृपया Algorithm Pulse server चालू है या नहीं check करें।"
+
+:
+
+"Radhey Radhey 🙏 Sania is currently unable to connect to the server. Please make sure your Algorithm Pulse server is running.",
+
+"bot"
+
+);
+
+}
+
+sendButton.disabled=false;
+
+}
+
+input.addEventListener("keydown",e=>{
+
+if(e.key==="Enter")
+sendMessage();
+
+});
+
+/* ================= SPEAKER ================= */
+
+function speak(text){
+
+if(!("speechSynthesis" in window))
+return;
+
+speechSynthesis.cancel();
+
+const speech=
+new SpeechSynthesisUtterance(
+text
+.replace(/[*#_`]/g,"")
+.substring(0,600)
+);
+
+speech.rate=.95;
+speech.pitch=1;
+
+speech.lang=
+currentLanguage==="hi"
+?"hi-IN"
+:"en-IN";
+
+speechSynthesis.speak(speech);
+
+}
+
+function stopSpeaking(){
+
+if("speechSynthesis" in window){
+
+speechSynthesis.cancel();
+
+}
+
+}
+
+/* ================= VOICE ================= */
+
+let recognition=null;
+
+function startVoice(){
+
+const SpeechRecognition=
+window.SpeechRecognition||
+window.webkitSpeechRecognition;
+
+if(!SpeechRecognition){
+
+addMessage(
+
+currentLanguage==="hi"
+?
+"राधे राधे 🙏 इस browser में voice input supported नहीं है।"
+:
+"Radhey Radhey 🙏 Voice input isn't supported by this browser.",
+
+"bot"
+
+);
+
+return;
+
+}
+
+recognition=
+new SpeechRecognition();
+
+recognition.lang=
+currentLanguage==="hi"
+?"hi-IN"
+:"en-IN";
+
+recognition.interimResults=false;
+
+recognition.maxAlternatives=1;
+
+recognition.onstart=()=>{
+
+addMessage(
+
+currentLanguage==="hi"
+?
+"🎤 मैं सुन रही हूँ..."
+:
+"🎤 I'm listening...",
+
+"bot"
+
+);
+
+};
+
+recognition.onresult=event=>{
+
+const text=
+event.results[0][0].transcript;
+
+input.value=text;
+
+sendMessage();
+
+};
+
+recognition.onerror=()=>{
+
+addMessage(
+
+currentLanguage==="hi"
+?
+"राधे राधे 🙏 मैं सुन नहीं पाई।"
+:
+"Radhey Radhey 🙏 I couldn't hear that.",
+
+"bot"
+
+);
+
+};
+
+recognition.start();
+
+}
+
+/* ================= SANIA FLOAT ================= */
+
+function focusSania(){
+
+document
+.getElementById("sania")
+.scrollIntoView({
+behavior:"smooth"
+});
+
+setTimeout(()=>{
+
+input.focus();
+
+},700);
+
+}
+
+/* ================= CONTACT ================= */
+
+document
+.getElementById("contactForm")
+.addEventListener("submit",function(e){
+
+e.preventDefault();
+
+const name=
+document.getElementById("name")
+.value.trim();
+
+const email=
+document.getElementById("email")
+.value.trim();
+
+const requirement=
+document.getElementById("requirement")
+.value.trim();
+
+const subject=
+encodeURIComponent(
+"New Algorithm Pulse Project Enquiry - "+name
+);
+
+const body=
+encodeURIComponent(
+
+"Name: "+name+
+"\nEmail: "+email+
+"\n\nProject Requirement:\n"+
+requirement
+
+);
+
+window.location.href=
+"mailto:helloalgorithmpulse@gmail.com?subject="+
+subject+
+"&body="+
+body;
+
+});
+
+/* ================= LEGAL ================= */
+
+const legalText={
+
+en:{
+
+terms:{
+title:"Terms & Conditions",
+
+text:`1. Project Scope
+Only the services and features specifically included in the approved quotation are included in the project.
+
+2. Payment
+Payment terms, advance amount and milestone/final payments will be agreed in writing before development begins.
+
+3. Additional Work
+Features, pages, integrations or changes outside the approved scope may be quoted separately.
+
+4. Revisions
+The number of included revisions will be specified in the quotation. Additional revisions may be chargeable.
+
+5. Domain & Hosting
+Domain and hosting renewal or subscription charges are the client's responsibility unless explicitly included in the quotation.
+
+6. APIs & Third-Party Services
+Paid APIs, plugins, software, subscriptions and other third-party services are separate unless specifically included.
+
+7. Client Content
+The client is responsible for providing accurate and lawful text, images, logos, videos and other materials.
+
+8. Delivery
+Delivery timelines depend on timely receipt of required content, approvals and payments.
+
+9. Ownership
+Ownership and source-code handover will follow the terms stated in the approved quotation or agreement.
+
+10. Algorithm Pulse Credit
+Where agreed, a small “Built by Algorithm Pulse” credit may be displayed on the website.
+
+11. Maintenance
+Future maintenance, updates and new features are separate services unless included in a maintenance agreement.
+
+12. Cancellation
+Cancellation and refund terms will depend on the agreed project terms and work already completed.
+
+13. Client Approval
+Changes requested after final approval may be treated as additional work.
+
+These terms should be read together with the project quotation/agreement.`},
+
+privacy:{
+title:"Privacy Policy",
+
+text:`Algorithm Pulse may receive information submitted through website enquiry forms, such as name, email address and project requirements.
+
+This information may be used to respond to enquiries, discuss requested services and manage project communication.
+
+Reasonable security practices should be used to protect submitted information.
+
+Information may be shared with service providers only where reasonably required to provide the requested service or operate the relevant system.`},
+
+refund:{
+title:"Cancellation & Refund Policy",
+
+text:`Cancellation and refund terms will be agreed before project work begins.
+
+An advance may be non-refundable once development or production work has started, subject to the agreed quotation, contract and applicable law.
+
+If a project is cancelled, the amount already earned for completed work, approved expenses or third-party services may be considered when determining any applicable refund.
+
+Specific refund terms should always be confirmed in writing in the project agreement.`},
+
+maintenance:{
+title:"Maintenance Policy",
+
+text:`Website maintenance, updates, bug fixes, content changes and new features may be provided as separate services after delivery.
+
+Any maintenance package, response time, included work and pricing will be confirmed separately.
+
+Third-party subscriptions, domain renewals, hosting and API charges remain separate unless explicitly included in the maintenance agreement.`}
+
+},
+
+hi:{
+
+terms:{
+title:"Terms & Conditions",
+
+text:`1. प्रोजेक्ट Scope
+Approved quotation में विशेष रूप से शामिल services और features ही project का हिस्सा होंगे।
+
+2. Payment
+Advance amount और milestone/final payment की conditions development शुरू होने से पहले लिखित रूप में तय होंगी।
+
+3. Additional Work
+Approved scope से बाहर के features, pages, integrations या changes के लिए अलग quotation दिया जा सकता है।
+
+4. Revisions
+Included revisions की संख्या quotation में बताई जाएगी। अतिरिक्त revisions chargeable हो सकती हैं।
+
+5. Domain & Hosting
+Domain और hosting की renewal/subscription fees client की responsibility होगी, जब तक quotation में स्पष्ट रूप से शामिल न हो।
+
+6. APIs और Third-Party Services
+Paid APIs, plugins, software, subscriptions और अन्य third-party services अलग होंगे, जब तक quotation में शामिल न हों।
+
+7. Client Content
+Text, images, logos, videos और अन्य materials सही और lawful उपलब्ध कराना client की responsibility होगी।
+
+8. Delivery
+Delivery timeline client द्वारा content, approvals और payments समय पर देने पर निर्भर करेगी।
+
+9. Ownership
+Ownership और source-code handover approved quotation/agreement में लिखी conditions के अनुसार होगा।
+
+10. Algorithm Pulse Credit
+जहाँ सहमति हो, website पर छोटा “Built by Algorithm Pulse” credit रखा जा सकता है।
+
+11. Maintenance
+Future maintenance, updates और नए features अलग services होंगे, जब तक maintenance agreement में शामिल न हों।
+
+12. Cancellation
+Cancellation और refund की conditions agreed project terms और completed work के अनुसार होंगी।
+
+13. Client Approval
+Final approval के बाद requested major changes को additional work माना जा सकता है।
+
+इन terms को project quotation/agreement के साथ पढ़ा जाना चाहिए।`},
+
+privacy:{
+title:"Privacy Policy",
+
+text:`Algorithm Pulse website enquiry के दौरान दिए गए नाम, email और project requirements जैसी जानकारी प्राप्त कर सकता है।
+
+इस information का उपयोग enquiry का जवाब देने, requested services पर चर्चा करने और project communication के लिए किया जा सकता है।
+
+Submitted information की सुरक्षा के लिए reasonable security practices अपनाई जानी चाहिए।
+
+जहाँ service देने या system चलाने के लिए जरूरी हो, information relevant service providers के साथ share की जा सकती है।`},
+
+refund:{
+title:"Cancellation & Refund Policy",
+
+text:`Cancellation और refund की conditions project शुरू होने से पहले तय की जाएंगी।
+
+Development या production शुरू होने के बाद advance payment refund न हो सकती है, जो agreed quotation, contract और applicable law के अधीन होगी।
+
+Project cancellation की स्थिति में completed work, approved expenses और third-party services की लागत को applicable refund तय करते समय ध्यान में रखा जा सकता है।
+
+Specific refund conditions project agreement में लिखित रूप में confirm की जानी चाहिए।`},
+
+maintenance:{
+title:"Maintenance Policy",
+
+text:`Website delivery के बाद maintenance, updates, bug fixes, content changes और नए features अलग services हो सकते हैं।
+
+Maintenance package, response time, included work और pricing अलग से confirm किए जाएंगे।
+
+Third-party subscriptions, domain renewals, hosting और API charges अलग रहेंगे, जब तक maintenance agreement में स्पष्ट रूप से शामिल न हों।`}
+
+}
+
+};
+
+/* OPEN LEGAL */
+
+function openLegal(type){
+
+const data=
+legalText[currentLanguage][type];
+
+document
+.getElementById("legalTitleModal")
+.textContent=data.title;
+
+document
+.getElementById("legalContent")
+.textContent=data.text;
+
+document
+.getElementById("legalModal")
+.classList.add("active");
+
+}
+
+/* CLOSE LEGAL */
+
+function closeLegal(){
+
+document
+.getElementById("legalModal")
+.classList.remove("active");
+
+}
+
+document
+.getElementById("legalModal")
+.addEventListener("click",function(e){
+
+if(e.target===this)
+closeLegal();
+
+});
+
+/* ================= RESTORE LANGUAGE ================= */
+
+try{
+
+const saved=
+localStorage.getItem(
+"algorithmPulseLanguage"
+);
+
+if(saved==="hi")
+setLanguage("hi");
+
+}catch(e){}
+
+</script>
+
+</body>
+</html>
